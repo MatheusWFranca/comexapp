@@ -1,0 +1,12 @@
+"'d75681f9-5e9c-46b1-8257-a0a47e8680b7' As TestSuite":
+    Description: =""
+    DisplayName: ="Conjunto"
+
+    "'298a997c-c6d2-4718-b3ed-ee05834d9e95' As TestCase":
+        Description: =""
+        DisplayName: ="Caso"
+
+        Step1 As TestStep:
+            Description: ="Refresh(Table1_2)"
+            Value: =Refresh(Table1_2)
+

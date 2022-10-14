@@ -1,0 +1,16 @@
+Error As screen:
+    BackgroundImage: ='404-4'
+
+    Button3_7 As button:
+        DisabledColor: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =55
+        HoverColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =ColorFade(RGBA(256, 256, 256, 0), -100%)
+        OnSelect: =Navigate(Screen1)
+        PressedFill: =
+        Text: =""
+        X: =604
+        Y: =628
+        ZIndex: =1
+

@@ -1,0 +1,9 @@
+OnePage As screen:
+
+    PowerBI2 As powerbi:
+        Height: =768
+        TileUrl: |-
+            ="https://app.powerbi.com/reportEmbed?reportId=3c2c5336-2f8f-47a3-a32e-24b94eb630ab&autoAuth=true&ctid=a1f1e214-7ded-45b6-81a1-9e8ae3459641"
+        Width: =1366
+        ZIndex: =1
+

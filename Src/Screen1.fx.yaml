@@ -1,0 +1,187 @@
+Screen1 As screen:
+    BackgroundImage: =
+    Fill: =RGBA(255, 255, 255, 1)
+
+    Image1 As image:
+        Height: =227
+        HoverFill: =ColorFade(Self.Fill, 10%)
+        Image: ='Rastreie suas importações em um só lugar.'
+        Width: =527
+        X: =776
+        Y: =292
+        ZIndex: =1
+
+    Image4 As image:
+        Height: =623
+        Image: ='Saly-10'
+        ImagePosition: =ImagePosition.Fill
+        Width: =743
+        Y: =145
+        ZIndex: =2
+
+    Image7 As image:
+        Height: =155
+        Image: ='Saly-44'
+        Width: =175
+        X: =284
+        Y: =68
+        ZIndex: =3
+
+    Image8 As image:
+        Height: =109
+        Image: ='johnson-controls'
+        Width: =163
+        X: =1140
+        Y: =6
+        ZIndex: =4
+
+    BotaoTodasImportacoes As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =13
+
+        Image2 As image:
+            Fill: =Transparent
+            Height: =88
+            HoverFill: =Transparent
+            Image: =TodasImpo
+            PressedFill: =Transparent
+            Width: =160
+            X: =776
+            Y: =518
+            ZIndex: =6
+
+        Button3_3 As button:
+            AutoDisableOnSelect: =false
+            BorderThickness: =0
+            Color: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 100%)
+            DisabledColor: =
+            Fill: =RGBA(0, 0, 0, 0)
+            HoverColor: =
+            HoverFill: =ColorFade(RGBA(256, 256, 256, 0), -100%)
+            OnSelect: |
+                =Navigate(Screen4, ScreenTransition.Fade); ClearCollect(ExcelCollection, Table1_1); ClearCollect(DadosNavio,Table1_2)
+            PressedColor: =
+            PressedFill: =
+            Text: =""
+            X: =776
+            Y: =541
+            ZIndex: =8
+
+    "'Botao OnePage' As group":
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =13
+
+        Image2_3 As image:
+            BorderColor: =Transparent
+            DisabledFill: =Transparent
+            Height: =88
+            HoverBorderColor: =Transparent
+            HoverFill: =Transparent
+            Image: ='Group 5'
+            PressedBorderColor: =Transparent
+            PressedFill: =Transparent
+            Width: =166
+            X: =1183
+            Y: =582
+            ZIndex: =11
+
+        Button1_1 As button:
+            AutoDisableOnSelect: =false
+            Color: =Transparent
+            DisabledBorderColor: =Transparent
+            DisabledColor: =Transparent
+            DisabledFill: =Transparent
+            Fill: =Transparent
+            HoverColor: =Transparent
+            HoverFill: =Transparent
+            OnSelect: =Navigate(OnePage,ScreenTransition.Fade)
+            PressedBorderColor: =Transparent
+            PressedColor: =Transparent
+            Text: ="BI Comex"
+            X: =1186
+            Y: =606
+            ZIndex: =12
+
+    BotaoConsultarItem As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =13
+
+        Image2_2 As image:
+            Fill: =Transparent
+            Height: =88
+            HoverFill: =Transparent
+            Image: ='Frame 4'
+            PressedFill: =Transparent
+            Width: =161
+            X: =979
+            Y: =517
+            ZIndex: =9
+
+        Button3_11 As button:
+            AutoDisableOnSelect: =false
+            BorderThickness: =0
+            Color: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 100%)
+            DisabledColor: =
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =41
+            HoverColor: =
+            HoverFill: =ColorFade(RGBA(256, 256, 256, 0), -100%)
+            OnSelect: |
+                =Navigate(TelaItens, ScreenTransition.Fade); ClearCollect(DadosItens, Tabela3); ClearCollect(ExcelCollection, Table1_1)
+            PressedColor: =
+            PressedFill: =
+            Text: =""
+            Width: =172
+            X: =979
+            Y: =541
+            ZIndex: =10
+
+    BotaoBIComex As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =13
+
+        Image2_1 As image:
+            BorderColor: =Transparent
+            DisabledFill: =Transparent
+            Height: =88
+            HoverBorderColor: =Transparent
+            HoverFill: =Transparent
+            Image: ='Group 5'
+            PressedBorderColor: =Transparent
+            PressedFill: =Transparent
+            Width: =166
+            X: =1180
+            Y: =517
+            ZIndex: =5
+
+        Button1 As button:
+            AutoDisableOnSelect: =false
+            Color: =Transparent
+            DisabledBorderColor: =Transparent
+            DisabledColor: =Transparent
+            DisabledFill: =Transparent
+            Fill: =Transparent
+            HoverColor: =Transparent
+            HoverFill: =Transparent
+            OnSelect: =Navigate(Screen3,ScreenTransition.Fade)
+            PressedBorderColor: =Transparent
+            PressedColor: =Transparent
+            Text: ="BI Comex"
+            X: =1180
+            Y: =541
+            ZIndex: =7
+

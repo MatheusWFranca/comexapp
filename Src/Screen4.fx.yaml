@@ -1,0 +1,372 @@
+Screen4 As screen:
+    Fill: =RGBA(250, 251, 255, 1)
+
+    Rectangle10 As rectangle:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =761
+        Width: =165
+        ZIndex: =1
+
+    Button2 As button:
+        AutoDisableOnSelect: =false
+        BorderColor: =
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        DisabledColor: =RGBA(255, 255, 255, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =618
+        HoverFill: =
+        RadiusBottomLeft: =30
+        RadiusBottomRight: =30
+        RadiusTopLeft: =30
+        RadiusTopRight: =30
+        Text: =""
+        Width: =977
+        X: =309
+        Y: =132
+        ZIndex: =2
+
+    Image3 As image:
+        Height: =58
+        Image: ='Group 31'
+        Width: =143
+        X: =11
+        Y: =27
+        ZIndex: =3
+
+    "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Height: =512
+        Items: |-
+            =SortByColumns(
+                Filter(
+                    ExcelCollection,
+                    Pesquisar.Text in IMP || Pesquisar.Text in 'REF. PCPM',
+                    DropMes.Selected.Result in Text('DATA BAAN' + 1,"mmmm"),
+                    TipoMercadoria.Selected.Result in 'FG / RM'
+                ),
+                "DATA BAAN",
+                Ascending
+            )
+        Layout: =Layout.Vertical
+        TabIndex: =1
+        TemplatePadding: =0
+        TemplateSize: =68
+        Width: =946
+        X: =341
+        Y: =238
+        ZIndex: =4
+
+        "'SEA/AIR' As label":
+            Height: =19
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.'REF. PCPM'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =113
+            X: =120
+            Y: =24
+            ZIndex: =1
+
+        IMP As label:
+            AutoHeight: =true
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =17
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.IMP
+            VerticalAlign: =VerticalAlign.Top
+            Width: =89
+            Y: =24
+            ZIndex: =2
+
+        NextArrow4 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =39
+            Icon: =Icon.ChevronRight
+            OnSelect: |-
+                =Set(EditRecord, ThisItem); Navigate(Screen6,Fade, {type: ThisItem.IMP + ThisItem.Supplier + ThisItem.Modal + ThisItem.'Port Destination' + ThisItem.'País de Origem da Carga'})
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="Exibir detalhes do item"
+            Width: =43
+            X: =879
+            Y: =14
+            ZIndex: =3
+
+        Separator4 As rectangle:
+            BorderColor: =RGBA(230, 230, 230, 1)
+            Fill: =RGBA(230, 230, 230, 1)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =4
+
+        ETA As label:
+            Height: =20
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                =Text(
+                    ThisItem.'ETA ', "dd/mm/yyyy"
+                )
+            VerticalAlign: =VerticalAlign.Top
+            Width: =107
+            X: =286
+            Y: =23
+            ZIndex: =5
+
+        Image18 As image:
+            Height: =68
+            Image: =If(ThisItem.'Status PCPMI' = "Canal Verde", Canalverde, If(ThisItem.'Status PCPMI' = "Canal Amarelo", 'Canal Amarelo', If(ThisItem.'Status PCPMI' = "Canal Vermelho", CanalVermelho, If(ThisItem.'Status PCPMI' = "Em Trânsito", EmTransito, If(ThisItem.'Status PCPMI' = "Parado na Origem", ParadoOrigem, If(ThisItem.'Status PCPMI' = "Agº Carga Pronta", CargaPronta, If(ThisItem.'Status PCPMI' = "Agº Booking", AgBooking, If(ThisItem.'Status PCPMI' = "Chiller", Chiller, If(ThisItem.'Status PCPMI' = "Em desembaraço", Desembaraco)))))))))
+            OnSelect: =Select(Parent)
+            Width: =138
+            X: =718
+            ZIndex: =7
+
+        ETA_1 As label:
+            Height: =20
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =Text(ThisItem.'DATA BAAN' + 1, "dd/mm/yyyy")
+            VerticalAlign: =VerticalAlign.Top
+            Width: =107
+            X: =477
+            Y: =23
+            ZIndex: =8
+
+    "'IMP COL' As label":
+        Color: =RGBA(181, 182, 192, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Text: ="IMP"
+        Width: =44
+        X: =340
+        Y: =173
+        ZIndex: =5
+
+    "'SEA COL' As label":
+        Color: =RGBA(181, 182, 192, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Text: ="SEA/AIR"
+        Width: =79
+        X: =473
+        Y: =173
+        ZIndex: =6
+
+    "'ETA COL' As label":
+        Color: =RGBA(181, 182, 192, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Text: ="ETA"
+        Width: =50
+        X: =642
+        Y: =173
+        ZIndex: =7
+
+    "'ENTREGA COL' As label":
+        Color: =RGBA(181, 182, 192, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Text: ="ENTREGA"
+        Width: =91
+        X: =816
+        Y: =173
+        ZIndex: =8
+
+    "'STATUS COL' As label":
+        Align: =Align.Center
+        Color: =RGBA(181, 182, 192, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Text: ="STATUS"
+        Width: =91
+        X: =1084
+        Y: =173
+        ZIndex: =9
+
+    Pesquisar As text:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderThickness: =0
+        Color: =RGBA(153, 153, 153, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(153, 153, 153, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        Height: =58
+        HintText: ="Pesquise"
+        HoverBorderColor: =RGBA(255, 255, 255, 1)
+        HoverColor: =RGBA(153, 153, 153, 1)
+        HoverFill: =RGBA(255, 255, 255, 1)
+        PaddingLeft: =65
+        PaddingRight: =20
+        PressedColor: =RGBA(153, 153, 153, 1)
+        RadiusBottomLeft: =30
+        RadiusBottomRight: =30
+        RadiusTopLeft: =30
+        RadiusTopRight: =30
+        Width: =263
+        X: =1024
+        Y: =64
+        ZIndex: =10
+
+    Image5 As image:
+        Height: =46
+        Image: ='search 1'
+        Width: =41
+        X: =1031
+        Y: =70
+        ZIndex: =11
+
+    DropMes As dropdown:
+        AllowEmptySelection: =true
+        BorderThickness: =1
+        ChevronBackground: =RGBA(109, 49, 162, 1)
+        Default: =""
+        Height: =35
+        Items: =Distinct(ExcelCollection, Text('DATA BAAN' + 1, "mmm"))
+        OnSelect: =Distinct(ExcelCollection, Text('DATA BAAN' + 1, "mmmm"))
+        Width: =110
+        X: =13
+        Y: =704
+        ZIndex: =12
+
+    Label2 As label:
+        AutoHeight: =true
+        Font: =Font.Lato
+        Height: =28
+        Size: =11
+        Text: ="Filtar por Mes"
+        Width: =141
+        X: =13
+        Y: =676
+        ZIndex: =14
+
+    Image9 As image:
+        Height: =302
+        Image: ='Group 260 - cópia 3'
+        Width: =91
+        X: =191
+        Y: =105
+        ZIndex: =15
+
+    Timer2 As timer:
+        AutoPause: =false
+        AutoStart: =true
+        Duration: =300000
+        OnTimerEnd: |-
+            =ClearCollect(
+                ExcelCollection,
+                Table1_1
+            )
+        Repeat: =true
+        Visible: =false
+        X: =302
+        Y: =24
+        ZIndex: =16
+
+    Icon2 As icon.Reload:
+        Height: =24
+        Icon: =Icon.Reload
+        OnSelect: =ClearCollect(ExcelCollection, Table1_1)
+        Width: =31
+        X: =1313
+        Y: =81
+        ZIndex: =17
+
+    Label1 As label:
+        Color: =RGBA(181, 182, 192, 1)
+        Height: =52
+        Text: |-
+            =If(CountRows(ExcelCollection) - 1 = -1, "Carregando...", "Total de Processos: " & CountRows(ExcelCollection) - 1)
+        Width: =236
+        X: =316
+        Y: =67
+        ZIndex: =18
+
+    Button3_1 As button:
+        DisabledColor: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =55
+        HoverColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =ColorFade(RGBA(256, 256, 256, 0), -100%)
+        OnSelect: =Navigate(Screen1)
+        PressedFill: =
+        Text: =""
+        X: =11
+        Y: =30
+        ZIndex: =19
+
+    Button3_5 As button:
+        DisabledColor: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =52
+        HoverColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =ColorFade(RGBA(256, 256, 256, 0), -100%)
+        OnSelect: =Navigate(Error)
+        PressedFill: =
+        Text: =""
+        Width: =57
+        X: =59
+        Y: =293
+        ZIndex: =20
+
+    Button3_6 As button:
+        DisabledColor: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =52
+        HoverColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =ColorFade(RGBA(256, 256, 256, 0), -100%)
+        OnSelect: =Navigate(Error)
+        PressedFill: =
+        Text: =""
+        Width: =57
+        X: =59
+        Y: =358
+        ZIndex: =21
+
+    TipoMercadoria As dropdown:
+        AllowEmptySelection: =true
+        Default: =""
+        Height: =35
+        Items: =Distinct(ExcelCollection, 'FG / RM')
+        Width: =110
+        X: =13
+        Y: =629
+        ZIndex: =22
+
+    Label2_1 As label:
+        AutoHeight: =true
+        Font: =Font.Lato
+        Height: =28
+        Size: =11
+        Text: ="Filtar por RM/FG"
+        Width: =154
+        X: =11
+        Y: =601
+        ZIndex: =23
+

@@ -1,0 +1,17 @@
+Screen3 As screen:
+
+    PowerBI5 As powerbi:
+        Height: =768
+        TileUrl: |-
+            ="https://app.powerbi.com/reportEmbed?reportId=ca0346e8-7b84-49b8-865c-f569fac5f54e&autoAuth=true&ctid=a1f1e214-7ded-45b6-81a1-9e8ae3459641"
+        Width: =1366
+        ZIndex: =1
+
+    Icon1 As icon.BackArrow:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        X: =18
+        Y: =21
+        ZIndex: =2
+

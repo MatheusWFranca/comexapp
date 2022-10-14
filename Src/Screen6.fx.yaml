@@ -1,0 +1,572 @@
+Screen6 As screen:
+    BackgroundImage: =
+    Fill: =RGBA(250, 251, 255, 1)
+    ImagePosition: =ImagePosition.Stretch
+
+    Image12 As image:
+        Height: =1200
+        Image: =Group
+        ImagePosition: =ImagePosition.Fill
+        Visible: =If(EditRecord.'REF. PCPM' = "")
+        Width: =1200
+        X: =400
+        Y: =-200
+        ZIndex: =1
+
+    "Map1_1 As 'Mapa (versão preliminar)'.pcfdataset":
+        BorderColor: =RGBA(0, 18, 107, 1)
+        CurrentLocation: =true
+        CurrentLocationLatitude: =LookUp(DadosNavio, EditRecord.IMP = IMP, 'REGEX LAT')
+        CurrentLocationLongitude: =LookUp(DadosNavio, EditRecord.IMP = IMP, LONGITUDE)
+        DefaultLatitude: ="-23,1791"
+        DefaultLocation: =true
+        DefaultLongitude: ="-45,8872"
+        DefaultZoomLevel: =0
+        DisplayMode: =DisplayMode.Edit
+        Height: =768
+        Items: =BingMapas
+        MapStyle: ='''Microsoft.Map.MapStyle'''.GrayscaleDark
+        PinColor: =RGBA(255, 0, 0, 1)
+        RouteMaintainOrder: =true
+        RouteOptimization: ='''Microsoft.Map.RouteOptimization'''.Distance
+        RouteWaypoints_Items: =BingMapas
+        ShapeDrawing: =false
+        ShapeEditingDeleting: =false
+        Transparency: =0
+        UseRouting: =false
+        Width: =783
+        X: =583
+        Y: =0
+        ZIndex: =2
+        Zoom: =true
+
+    Button2_2 As button:
+        AutoDisableOnSelect: =false
+        BorderColor: =
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        DisabledColor: =RGBA(255, 255, 255, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =339
+        HoverFill: =
+        RadiusBottomLeft: =30
+        RadiusBottomRight: =30
+        RadiusTopLeft: =30
+        RadiusTopRight: =30
+        Text: =""
+        Width: =358
+        X: =189
+        Y: =417
+        ZIndex: =3
+
+    Rectangle10_1 As rectangle:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =768
+        Width: =165
+        ZIndex: =4
+
+    Image3_1 As image:
+        Height: =58
+        Image: ='Group 31'
+        Width: =143
+        X: =11
+        Y: =27
+        ZIndex: =5
+
+    Image9_1 As image:
+        Height: =285
+        Image: ='Group 260 - cópia 2'
+        Width: =94
+        X: =39
+        Y: =132
+        ZIndex: =6
+
+    Button2_1 As button:
+        AutoDisableOnSelect: =false
+        BorderColor: =
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        DisabledColor: =RGBA(255, 255, 255, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =273
+        HoverFill: =
+        RadiusBottomLeft: =30
+        RadiusBottomRight: =30
+        RadiusTopLeft: =30
+        RadiusTopRight: =30
+        Text: =""
+        Width: =359
+        X: =189
+        Y: =18
+        ZIndex: =12
+
+    Label7 As label:
+        AutoHeight: =true
+        Color: =RGBA(153, 153, 153, 1)
+        Size: =10
+        Text: |-
+            ="Importação No
+            "
+        Width: =110
+        X: =222
+        Y: =31
+        ZIndex: =13
+
+    Label7_1 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =20
+        Size: =12
+        Text: =EditRecord.IMP
+        Width: =110
+        X: =222
+        Y: =60
+        ZIndex: =14
+
+    Image14 As image:
+        Height: =85
+        Image: ='Group 265'
+        Width: =134
+        X: =398
+        Y: =58
+        ZIndex: =15
+
+    Image15 As image:
+        Height: =23
+        Image: ='Line 26'
+        Width: =292
+        X: =228
+        Y: =115
+        ZIndex: =16
+
+    Label7_2 As label:
+        Color: =RGBA(153, 153, 153, 1)
+        Height: =27
+        Size: =8
+        Text: =LookUp(ExcelCollection, IMP = EditRecord.IMP, 'REF. PCPM')
+        Width: =160
+        Wrap: =false
+        X: =221
+        Y: =81
+        ZIndex: =17
+
+    Image16 As image:
+        Height: =20
+        Image: =location
+        Width: =20
+        X: =229
+        Y: =143
+        ZIndex: =18
+
+    Label7_3 As label:
+        AutoHeight: =true
+        FontWeight: =FontWeight.Bold
+        Height: =31
+        Size: =11
+        Text: =LookUp(ExcelCollection, IMP = EditRecord.IMP, Supplier)
+        Width: =293
+        X: =253
+        Y: =140
+        ZIndex: =19
+
+    Image16_1 As image:
+        Height: =63
+        Image: ='Line 28'
+        Width: =20
+        X: =230
+        Y: =167
+        ZIndex: =20
+
+    Image16_2 As image:
+        Height: =20
+        Image: ='Group 268 (1)'
+        Width: =20
+        X: =230
+        Y: =231
+        ZIndex: =21
+
+    Label7_4 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =20
+        Size: =12
+        Text: =LookUp(ExcelCollection, IMP = EditRecord.IMP, 'Port Destination')
+        Width: =167
+        X: =249
+        Y: =231
+        ZIndex: =22
+
+    Label7_5 As label:
+        Color: =RGBA(153, 153, 153, 1)
+        Height: =18
+        Size: =8
+        Text: =EditRecord.'País de Origem da Carga'
+        Width: =67
+        X: =254
+        Y: =163
+        ZIndex: =23
+
+    Label7_6 As label:
+        Color: =RGBA(153, 153, 153, 1)
+        Height: =18
+        Size: =8
+        Text: ="Brazil"
+        Width: =67
+        X: =254
+        Y: =212
+        ZIndex: =24
+
+    Image17 As image:
+        Height: =50
+        Image: ='Group 280'
+        Width: =50
+        X: =496
+        Y: =250
+        ZIndex: =25
+
+    Label1_4 As label:
+        Align: =Align.Center
+        DisabledBorderColor: =RGBA(181, 182, 192, 1)
+        DisabledColor: =RGBA(181, 182, 192, 1)
+        Size: =10
+        Text: ="Item"
+        Width: =86
+        X: =178
+        Y: =421
+        ZIndex: =26
+
+    Label1_5 As label:
+        Align: =Align.Center
+        Size: =10
+        Text: ="Descrição"
+        Width: =86
+        X: =321
+        Y: =421
+        ZIndex: =27
+
+    Label1_6 As label:
+        Align: =Align.Center
+        AutoHeight: =true
+        Size: =10
+        Text: ="Quantidade"
+        Width: =86
+        X: =449
+        Y: =427
+        ZIndex: =28
+
+    "Gallery5 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
+        Height: =291
+        Items: =If(IsBlank(PesquisarItem), Filter(Tabela3, IMP = EditRecord.IMP), Filter(Tabela3, IMP = EditRecord.IMP &&PesquisarItem.Text in Item))
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =43
+        Width: =347
+        X: =199
+        Y: =465
+        ZIndex: =29
+
+        Title6 As label:
+            Height: =13
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =8
+            Text: =ThisItem.Item
+            VerticalAlign: =VerticalAlign.Top
+            Width: =93
+            Y: =15
+            ZIndex: =1
+
+        Separator7 As rectangle:
+            Fill: =RGBA(89, 50, 234, 1)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =3
+
+        Title6_1 As label:
+            Height: =2
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =8
+            Text: =ThisItem.Item
+            VerticalAlign: =VerticalAlign.Top
+            Width: =45
+            X: =40
+            Y: =28
+            ZIndex: =4
+
+        Title6_2 As label:
+            Align: =Align.Center
+            Height: =15
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =8
+            Text: =ThisItem.'Descrição Item'
+            VerticalAlign: =VerticalAlign.Top
+            X: =93
+            Y: =15
+            ZIndex: =5
+
+        Title6_3 As label:
+            Align: =Align.Center
+            Height: =15
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =8
+            Text: =ThisItem.Quantidade
+            VerticalAlign: =VerticalAlign.Top
+            Width: =112
+            X: =235
+            Y: =13
+            ZIndex: =6
+
+    Button9 As button:
+        AutoDisableOnSelect: =false
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =65
+        HoverColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =
+        OnSelect: =Navigate(Screen4)
+        Text: =""
+        Width: =86
+        X: =39
+        Y: =127
+        ZIndex: =30
+
+    PesquisarItem As text:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderThickness: =0
+        Color: =RGBA(153, 153, 153, 1)
+        Default: =
+        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(153, 153, 153, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        Height: =41
+        HintText: ="Pesquise"
+        HoverBorderColor: =RGBA(255, 255, 255, 1)
+        HoverColor: =RGBA(153, 153, 153, 1)
+        HoverFill: =RGBA(255, 255, 255, 1)
+        PaddingLeft: =65
+        PaddingRight: =20
+        PressedColor: =RGBA(153, 153, 153, 1)
+        RadiusBottomLeft: =30
+        RadiusBottomRight: =30
+        RadiusTopLeft: =30
+        RadiusTopRight: =30
+        Size: =10
+        Width: =187
+        X: =359
+        Y: =369
+        ZIndex: =31
+
+    Image5_1 As image:
+        Height: =22
+        Image: ='search 1'
+        Width: =23
+        X: =371
+        Y: =378
+        ZIndex: =32
+
+    Button3_2 As button:
+        DisabledColor: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =55
+        HoverColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =ColorFade(RGBA(256, 256, 256, 0), -100%)
+        OnSelect: =Navigate(Screen1)
+        PressedFill: =
+        Text: =""
+        Visible: =_UpdateModal
+        X: =5
+        Y: =30
+        ZIndex: =33
+
+    Label7_7 As label:
+        AutoHeight: =true
+        Color: =RGBA(153, 153, 153, 1)
+        Size: =10
+        Text: |-
+            ="Mais detalhes
+            "
+        Width: =110
+        X: =422
+        Y: =261
+        ZIndex: =34
+
+    Button4 As button:
+        Color: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =33
+        HoverColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =
+        OnSelect: |-
+            =UpdateContext({_UpdateModal: true})
+        Text: =""
+        Width: =116
+        X: =422
+        Y: =255
+        ZIndex: =38
+
+    Group6 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =45
+
+        Rectangle2 As rectangle:
+            Fill: =RGBA(60, 60, 60, 0.7)
+            Height: =768
+            Visible: =_UpdateModal
+            Width: =1366
+            ZIndex: =35
+
+        Rectangle3 As rectangle:
+            Fill: =RGBA(256, 256, 256, 256)
+            Height: =231
+            Visible: =_UpdateModal
+            Width: =416
+            X: =469
+            Y: =210
+            ZIndex: =36
+
+        Image23 As image:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            Height: =24
+            HoverBorderColor: =
+            Image: =Union
+            PressedBorderColor: =
+            Visible: =_UpdateModal
+            Width: =20
+            X: =885
+            Y: =182
+            ZIndex: =37
+
+        Button5 As button:
+            BorderColor: =
+            BorderStyle: =
+            BorderThickness: =0
+            Color: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =54
+            HoverColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =
+            OnSelect: |-
+                =UpdateContext({_UpdateModal: false})
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: =""
+            Visible: =_UpdateModal
+            Width: =75
+            X: =857
+            Y: =157
+            ZIndex: =39
+
+        Label3 As label:
+            AutoHeight: =true
+            Height: =37
+            Size: =10
+            Text: |-
+                ="Valor:  " & EditRecord.'Valor da Invoice '
+            Tooltip: =
+            Visible: =_UpdateModal
+            Width: =142
+            X: =735
+            Y: =266
+            ZIndex: =40
+
+        Image25 As image:
+            Height: =89
+            Image: =DadosFinanceiros
+            Visible: =_UpdateModal
+            Width: =270
+            X: =540
+            Y: =185
+            ZIndex: =41
+
+        Label3_1 As label:
+            Height: =37
+            Size: =10
+            Text: |-
+                ="Invoice:  " & EditRecord.'Nº Invoice(s)'
+            Tooltip: =
+            Visible: =_UpdateModal
+            Width: =142
+            X: =489
+            Y: =261
+            ZIndex: =42
+
+        Label3_2 As label:
+            Height: =37
+            Size: =10
+            Text: |-
+                ="HBL/AWB:  "
+            Tooltip: =
+            Visible: =_UpdateModal
+            Width: =142
+            X: =489
+            Y: =300
+            ZIndex: =43
+
+        Label3_3 As label:
+            Height: =37
+            Size: =10
+            Text: ="Laded"
+            Tooltip: =
+            Visible: =_UpdateModal
+            Width: =142
+            X: =489
+            Y: =390
+            ZIndex: =44
+
+        Label3_4 As label:
+            AutoHeight: =true
+            Height: =37
+            Size: =10
+            Text: |-
+                ="Valor:  " & EditRecord.'Valor da Invoice '
+            Tooltip: =
+            Visible: =_UpdateModal
+            Width: =142
+            X: =736
+            Y: =303
+            ZIndex: =45
+
+    Button3_4 As button:
+        DisabledColor: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =55
+        HoverColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =ColorFade(RGBA(256, 256, 256, 0), -100%)
+        OnSelect: =Navigate(Screen1)
+        PressedFill: =
+        Text: =""
+        X: =5
+        Y: =30
+        ZIndex: =46
+
